@@ -6,4 +6,7 @@ This repository contains the official implementation of the paper ["Perceptual A
 ## Prerequisites
 * python>=3.6
 
-* pytorch>=1.0
+## As loss function
+
+
+## As assessment metric
