@@ -1,28 +1,18 @@
 import torch
 import os
-import math
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.optim import lr_scheduler
 import torch.nn as nn
-from torchvision import transforms
 from torch.nn import init
-import skimage.color as color
 from PIL import Image
-import itertools
 from torchvision import transforms
-import imageio
-import scipy.io as scio
-import numpy as np
-import matplotlib.pyplot as plt
 from ImageDataset import ImageDataset
 import argparse
 from torch.utils.data import DataLoader
-from torchvision import utils as vutils
 from metrics import PSNR_weight,SSIM_weight,MAE_weight,dists_weight,lipis_weight
 from DISTS_pytorch import DISTS
 import pytorch_ssim
-import time
 import lpips
 
 class Exposure(nn.Module):
@@ -109,9 +99,7 @@ class Trainer(object):
                                                  gamma=self.decay_ratio)
 
             assessmentV = self.train_single_image(imgrefSq,img,weight.squeeze(),length)
-
-            # with open('./result.txt', '+a') as f:
-            #     f.write("{}\t{}\n".format(self.img_name[0], '%.5f' % assessmentV))
+            print(assessmentV)
 
     def train_single_image(self,img_Ref,img,weight,length):
         # initialize logging system
@@ -122,7 +110,6 @@ class Trainer(object):
         print('Adam learning rate: {:.8f}'.format(self.optimizer.param_groups[0]['lr']))
         self.model.train()
         #self.scheduler.step()
-        starttime = time.time()
         for epoch in range(self.start_epoch, self.max_epochs):
             print('Adam learning rate: {:.8f}'.format(self.optimizer.param_groups[0]['lr']))
             img1 = img.to(self.device)
@@ -139,14 +126,11 @@ class Trainer(object):
                 break
             else:
                 running_loss = self.loss.data.item()
-                # loss_corrected = running_loss / (1 - beta ** local_counter)
                 format_str = ('(E:%d,) [Loss = %.4f] [Std Loss = %.4f]')
                 print(format_str % (epoch, running_loss, std_loss_corrected))
                 self.scheduler.step()
 
         assementV = self.assess(img_gen, img_Ref1, weight1, length)
-        endtime = time.time()
-        print(endtime - starttime)
 
         return assementV.data.item()
 
