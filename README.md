@@ -8,8 +8,12 @@ This repository contains the official implementation of the paper ["Perceptual A
 
 ## As assessment metric
 ### Usage:
-
-
+* Please put reference HDR images in  ``./assessment/image/ref/``, and test HDR images in ``./assessment/image/test/``.
+* Please put the name of test HDR images in ``./assessment/samples.txt``.
+* To evaluate the test HDR image: 
+```bash
+python ./assessment/HDRMetric.py
+```
 
 ## As loss function
 ### Usage:
