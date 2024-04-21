@@ -14,6 +14,7 @@ This repository contains the official implementation of the paper ["Perceptual A
 ```bash
 python ./assessment/HDRMetric.py
 ```
+Please make sure the LDR sequence is perfectly aligned with the reference sequence.
 
 ## As loss function
 ### Usage:
@@ -24,3 +25,14 @@ HDR_Loss = D(X, Y)
 HDR_Loss.backward()
 ```
 
+## Citation
+```
+@article{Cao2023PerceptualAA,
+  title={Perceptual Assessment and Optimization of High Dynamic Range Image Rendering},
+  author={Peibei Cao and Rafał K. Mantiuk and Kede Ma},
+  journal={ArXiv},
+  year={2023},
+  volume={abs/2310.12877},
+  url={https://api.semanticscholar.org/CorpusID:264306134}
+}
+```
