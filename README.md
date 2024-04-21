@@ -27,7 +27,7 @@ HDR_Loss.backward()
 
 ## Citation
 ```
-@article{Cao2023PerceptualAA,
+@article{Cao2023Perceptual,
   title={Perceptual Assessment and Optimization of High Dynamic Range Image Rendering},
   author={Peibei Cao and Rafał K. Mantiuk and Kede Ma},
   journal={ArXiv},
