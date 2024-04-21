@@ -1,1 +1,1 @@
-from .loss import hdrLoss
+from .HDRloss import hdrLoss
