@@ -10,7 +10,7 @@ This repository contains the official implementation of the paper ["Perceptual A
 
 ## As loss function
 ### Usage:
-```bash
+```
 from HDRloss import hdrLoss
 ```
 
