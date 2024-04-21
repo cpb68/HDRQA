@@ -6,8 +6,10 @@ This repository contains the official implementation of the paper ["Perceptual A
 ## Prerequisites
 * python>=3.6
 
+## As assessment metric
+
 ## As loss function
 ### Usage:
 
 
-## As assessment metric
+
