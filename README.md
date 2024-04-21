@@ -10,8 +10,10 @@ This repository contains the official implementation of the paper ["Perceptual A
 
 ## As loss function
 ### Usage:
-```bash
+```ruby
 from HDRloss import hdrLoss
+D = hdrLoss()
+HDR_Loss = D(X, Y)
+HDR_Loss.backward()
 ```
-
 
