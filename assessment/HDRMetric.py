@@ -122,7 +122,7 @@ class Trainer(object):
             self.optimizer.step()
 
             delta_loss = abs(self.loss.data.item() - running_loss)
-            if delta_loss < 10 ** (-80):
+            if delta_loss < 10 ** (-200):
                 break
             else:
                 running_loss = self.loss.data.item()
