@@ -14,7 +14,7 @@ This repository contains the official implementation of the paper ["Perceptual A
 ```bash
 python ./assessment/HDRMetric.py
 ```
-\bf{Please make sure the LDR sequence is perfectly aligned with the reference sequence.}
+**Please make sure the LDR sequence is perfectly aligned with the reference sequence.**
 
 ## As loss function
 ### Usage:
