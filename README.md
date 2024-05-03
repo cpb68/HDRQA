@@ -24,6 +24,7 @@ D = hdrLoss()
 HDR_Loss = D(X, Y)
 HDR_Loss.backward()
 ```
+**Please contact peibeicao2-c@my.cityu.edu.hk if you have any problem with the code.**
 
 ## Citation
 ```
